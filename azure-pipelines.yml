@@ -22,3 +22,10 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker Hub Connection'
+    repository: 'anquachdev/learn-devops-repo'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
